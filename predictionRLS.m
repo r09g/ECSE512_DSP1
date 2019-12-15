@@ -62,5 +62,6 @@ function [zeta,b,k_vec,y] = predictionRLS(n_d,FIR_len,duration,lambda,delta,sign
         % recursive update of the inverse of sample autocovariance matrix
         P = (1/lambda)*P - (1/lambda)*k_vec(k,:)*frame*P;   
     end
+    b = b';
 end
 

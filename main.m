@@ -6,21 +6,22 @@
 clear; close all;
 %% Parameter Specification
 % Signal and filter characteristics
-duration = 20; % length of signal in seconds
+filename = 'sample2_music.wav'; % audio sample file name
+duration = 10; % length of signal in seconds
 Fs = -1; % sample rate (enter -1 if unknown)
 num = 20; % length of filter
 n_d = 50; % samples to be delayed
 atten = 0.2; % relative attenuation of input
 freq = 2000; % frequency of sin in Hz
 % LMS parameters
-u = 0.00025;
+u = 0.00001; % step size
 % RLS parameters
-lambda = 0.95; % forgetting/weighing factor
+lambda = 0.99; % forgetting/weighing factor
 delta = 0.01; % initialization of P[n]
 % System settings ---------------------------------------------------------
 sound_sw = 1; % 0 for white noise and 1 for speech
 noise_sw = 0; % 0 for deterministic sin and 1 for time-varying sin
-alg_sw = 1; % 0 for LMS and 1 for RLS
+alg_sw = 0; % 0 for LMS and 1 for RLS
 verbose = 1; % 0 for no verbose; 1 for verbose
 % -------------------------------------------------------------------------
 
@@ -36,13 +37,13 @@ if(~sound_sw)
 else
     % Import input signal
     if(Fs == -1)
-        [y,Fs] = audioread('speech.wav');
+        [y,Fs] = audioread(filename);
         duration = duration * Fs;
         s = y(1:duration,1);
     else
         duration = duration * Fs;
         samples = [1,duration];
-        [y,Fs] = audioread('speech.wav',samples);
+        [y,Fs] = audioread(filename,samples);
         s = y(:,1);
     end
 end
@@ -55,7 +56,7 @@ if(~noise_sw)
     i = s_max*sin(freq*2*pi*n); % deterministic sine interference signal
 else
     % time-varying
-    freq_incr = 3000; % overall increment in Hz
+    freq_incr = 10000; % overall increment in Hz
     f = linspace(0,freq_incr,duration); % generate linearly spread samples
     f = f + freq; % add base frequency
     i = s_max*sin(2*pi*f'.*n);
@@ -131,3 +132,6 @@ ylim([0 max(error)])
 xlim([0 duration/Fs])
 grid on
 grid minor
+
+% use this to hear the sound
+% sound(output,Fs)
