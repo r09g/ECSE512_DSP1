@@ -40,7 +40,13 @@ The filter output used to suppress the interference is:
 
 The filter is able to adapt and create an copy of the sine interference signal over time.
 
-The 8092-point DFT of the FIR filter's frequency response via FFT method:
+The 8092-point DFT of the input signal via FFT method:
+
+<img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/Inputfft.png">
+
+Note the peak at 0.91 pi rad/sec and the wideband nature of the desired signal.
+
+The FIR filter's frequency response:
 
 <img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/filterresp.png">
 
