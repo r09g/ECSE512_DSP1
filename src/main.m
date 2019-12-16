@@ -6,15 +6,15 @@
 clear; close all;
 %% Parameter Specification
 % Signal and filter characteristics
-filename = 'sample2_music.wav'; % audio sample file name
-duration = 10; % length of signal in seconds
+filename = '../testdata/sample1_rap.wav'; % audio sample file name
+duration = 16; % length of signal in seconds
 Fs = -1; % sample rate (enter -1 if unknown)
-num = 20; % length of filter
+num = 50; % length of filter
 n_d = 50; % samples to be delayed
 atten = 0.2; % relative attenuation of input
 freq = 2000; % frequency of sin in Hz
 % LMS parameters
-u = 0.00001; % step size
+u = 0.0000025; % step size
 % RLS parameters
 lambda = 0.99; % forgetting/weighing factor
 delta = 0.01; % initialization of P[n]
