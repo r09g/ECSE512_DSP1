@@ -57,3 +57,4 @@ The group delay of the FIR filter:
 <img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/filtergrpd.png">
 
 
+The LMS has better tracking abilities than the RLS for time-varying statistics.
