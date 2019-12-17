@@ -27,6 +27,9 @@ A sine wave interference signal of 2000 Hz is generated. A music sample is used 
 
 <img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/desiredsgn.png">
 
+With additive sine interference of 2000 Hz, the input signal is:
+
+<img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/mixedinput.png">
 
 The processed output is:
 
