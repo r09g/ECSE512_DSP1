@@ -47,13 +47,13 @@ The 8092-point DFT of the input signal via FFT method:
 
 <img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/Inputfft.png">
 
-Note the peak at 0.91 pi rad/sec and the wideband nature of the desired signal.
+Note the peak at 0.09 pi rad/sec and the wideband nature of the desired signal.
 
 The FIR filter's frequency response:
 
 <img src="https://github.com/yanghaoqin/ECSE512_DSP1/blob/master/markdown/filterresp.png">
 
-Note the peak (0 dB) at 0.91 pi rad/sec. Since Fs = 44.1 kHz, the frequency of the interference signal maps to roughly 0.91 pi rad/sec when sampled. The filter is trying to pass only the interference, so it may be used to cancel the interference. (Sidelobes are present due to its FIR nature).
+Note the peak (0 dB) at 0.09 pi rad/sec. Since Fs = 44.1 kHz, the frequency of the interference signal maps to roughly 0.09 pi rad/sec when sampled. The filter is trying to pass only the interference, so it may be used to cancel the interference. (Sidelobes are present due to its FIR nature).
 
 The group delay of the FIR filter:
 
