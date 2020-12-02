@@ -15,7 +15,7 @@ The least-mean-squares (LMS) approach is based on two fundamental ideas:
 Control of convergence rate and stability is done with only one scalar parameter: the step size
 
 ## Algorithms: RLS
-The recursive-least-squares (RLS) is based on temporal statistics by considering past input values, with each of their effect weighed (or scaled) by a parameter known as the _forgetting factor_. The RLS utilizes two math techniques to simplify its filter coefficients update process: recursive updates and the _matrix inversion lemma (MIL)__. The sample autocovariance matrix is updated recursively and its inverse (used in computing the Kalman Gain Vector) is updated using the MIL. The RLS has rapid convergence but an order more computations compared to LMS.
+The recursive-least-squares (RLS) is based on temporal statistics by considering past input values, with each of their effect weighed (or scaled) by a parameter known as the _forgetting factor_. The RLS utilizes two math techniques to simplify its filter coefficients update process: recursive updates and the _matrix inversion lemma (MIL)_. The sample autocovariance matrix is updated recursively and its inverse (used in computing the Kalman Gain Vector) is updated using the MIL. The RLS has rapid convergence but an order more computations compared to LMS.
 
 Control of convergence rate and stability is done with the Kalman Gain Vector.
 
